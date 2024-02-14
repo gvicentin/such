@@ -33,7 +33,7 @@ BUILDDIR="build"
 [ -d "$BUILDDIR" ] || no_tests_error
 
 pushd "$BUILDDIR" &>/dev/null
-TESTSBIN=$(find '.' -name '*_test' -printf "%f\n")
+TESTSBIN=$(find '.' -name 'test_*' -printf "%f\n" | sort)
 [ -z "$TESTSBIN" ] && no_tests_error
 popd &>/dev/null
 

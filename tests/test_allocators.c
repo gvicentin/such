@@ -5,6 +5,7 @@
 char mu_assert_msg[MU_MSGBUF_LEN];
 int mu_tests_run;
 
+static char *test_should_pass(void);
 static char *all_tests(void);
 
 int main(void) {
@@ -19,6 +20,12 @@ int main(void) {
     return 0;
 }
 
+static char *test_should_pass(void) {
+    MU_ASSERT(1 == 1, "One should be equal to one");
+    MU_PASS;
+}
+
 static char *all_tests(void) {
+    MU_TEST(test_should_pass);
     MU_PASS;
 }

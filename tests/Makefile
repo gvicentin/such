@@ -1,4 +1,4 @@
-TESTSRCS := allocators_test.c collections_test.c string_test.c
+TESTSRCS := test_allocators.c test_collections.c test_string.c
 TESTSBIN := $(patsubst %.c, $(BUILDDIR)/%.test, $(TESTSRCS))
 
 $(BUILDDIR)/%.test: $(TESTDIR)/%.c

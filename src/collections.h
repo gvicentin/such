@@ -41,9 +41,9 @@ void *array_expand(void *array, size_t new_capacity);
         array_header(a)->length++;                                             \
     } while (0)
 
-void array_remove(void *array, int pos);
+void array_remove(void *array, size_t pos);
 
-void array_fast_remove(void *array, int pos);
+void array_fast_remove(void *array, size_t pos);
 
 #define array_clear(a) (array_header(a)->length = 0)
 

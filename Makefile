@@ -1,4 +1,4 @@
-CC     := clang
+CC     := gcc
 CFLAGS := -std=c11 -Wall -Wextra -Wpedantic
 
 SRCDIR   := src
@@ -16,7 +16,10 @@ include $(TESTDIR)/Makefile
 $(BUILDDIR):
 	mkdir -p $(BUILDDIR)
 
+test:
+	./runtests.sh
+
 clean:
 	rm -rf $(BUILDDIR)
 
-.PHONY: compile clean
+.PHONY: compile test clean
